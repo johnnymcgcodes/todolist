@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>To Do List</title>
+    <script
+      src="https://kit.fontawesome.com/2b18416840.js"
+      crossorigin="anonymous"
+    ></script>
+    <link
+      rel="stylesheet"
+      href="https://bootswatch.com/4/cyborg/bootstrap.min.css"
+    />
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <body>
+    <div class="container mt-4">
+      <h1 class="display-4 text-center">
+        <i class="fas fa-tasks text-primary"></i> To<span class="text-primary"
+          >Do</span
+        >List
+      </h1>
+      <div class="creat blockquote text-center">
+        <button class="btn btn-outline-primary btn-lg" id="newtask">
+          New task?
+        </button>
+      </div>
+      <div class="creat blockquote text-center">
+        <button class="btn btn-outline-danger btn-lg" id="newproject">
+          New Project?
+        </button>
+      </div>
+      <div class="form-group">
+        <form class="projectForm" id="project-form">
+          <label for="projectName">Project Name</label>
+          <input type="text" id="projectName" class="form-control" />
+          <input
+            type="button"
+            value="Add Project"
+            class="btn btn-danger btn-toolbar"
+            id="project-add"
+          />
+        </form>
+      </div>
+      <form id="task-form" class="taskform">
+        <div class="form-group">
+          <label for="taskTitle">Task</label>
+          <input type="text" id="taskTitle" class="form-control" />
+        </div>
+        <div class="form-group">
+          <label for="description">Description</label>
+          <input type="text" id="description" class="form-control" />
+        </div>
+        <div class="form-group">
+          <label for="dueDate">Due Date</label>
+          <input type="date" id="dueDate" min class="form-control" />
+        </div>
+        <div class="form-group">
+          <label for="project">Project</label>
+          <select name="project" id="project" class="form-control">
+            <option value="at-bat">At Bat</option>
+            <option value="on-deck">On Deck</option>
+            <option value="dug-out">dugout</option>
+          </select>
+        </div>
+
+        <input
+          type="button"
+          value="Add Task"
+          class="btn btn-primary btn-block"
+          id="task-add"
+        />
+      </form>
+
+      <ul class="nav nav-tabs">
+        <li class="nav-item">
+          <a class="nav-link" data-toggle="tab" id="on_deck" href="#on_deck"
+            >OnDeck</a
+          >
+        </li>
+        <li class="nav-item">
+          <a
+            class="nav-link active"
+            data-toggle="tab"
+            href="#at_bat"
+            id="at_bat"
+            >AtBat</a
+          >
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" data-toggle="tab" id="dug_out" href="#dug_out"
+            >dugout</a
+          >
+        </li>
+      </ul>
+      <div id="myTabContent" class="tab-content">
+        <div class="tab-pane fade" id="on_deck_tasks">
+          <table class="table table-striped mt-5" id="table-ondeck">
+            <thead>
+              <th>Task</th>
+              <th>Description</th>
+              <th>Due Date</th>
+              <th>Project</th>
+              <th></th>
+            </thead>
+            <tbody id="task-list-on-deck"></tbody>
+          </table>
+        </div>
+        <div class="tab-pane fade active show" id="at_bat_tasks">
+          <table class="table table-striped mt-5" id="table-atbat">
+            <thead>
+              <th>Task</th>
+              <th>Description</th>
+              <th>Due Date</th>
+              <th>Project</th>
+              <th></th>
+            </thead>
+            <tbody id="task-list-at-bat"></tbody>
+          </table>
+        </div>
+        <div class="tab-pane fade" id="dug_out_tasks">
+          <table class="table table-striped mt-5" id="table-dugout">
+            <thead>
+              <th>Task</th>
+              <th>Description</th>
+              <th>Due Date</th>
+              <th>Project</th>
+              <th></th>
+            </thead>
+            <tbody id="task-list-dug-out"></tbody>
+          </table>
+        </div>
+      </div>
+      <table class="table table-striped mt-5">
+        <!-- <thead>
+          <th>Task</th>
+          <th>Description</th>
+          <th>Priority</th>
+          <th>Due Date</th>
+          <th></th>
+        </thead> -->
+        <tbody id="task-list"></tbody>
+      </table>
+    </div>
+
+    <script src="main.js"></script>
+  </body>
+</html>
